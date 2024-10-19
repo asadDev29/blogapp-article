@@ -1,4 +1,4 @@
-# Project Name
+# Blogapp Project
 
 A brief description of your project. Explain its purpose and functionality.
 
@@ -11,9 +11,7 @@ A brief description of your project. Explain its purpose and functionality.
 - [Screenshots](#screenshots)
 - [Running Tests](#running-tests)
 - [Docker Build](#docker)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
+
 
 ## Features
 
