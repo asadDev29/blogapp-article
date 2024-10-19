@@ -1,0 +1,30 @@
+services:
+  blogapp:
+    container_name: blogapp_container
+    build:
+      context: .
+      dockerfile: Dockerfile  # Ensure you have a Dockerfile in the root directory
+    volumes:
+      - .:/app  # Mount the current directory to /app in the container
+    depends_on:
+      - postgres
+      - redis
+    environment:
+      - DATABASE_URL=postgres://user:password@postgres:5432/dbname  # Update with your actual db credentials
+
+  postgres:
+    container_name: postgres_container
+    image: postgres:latest
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: user  # Update with your user
+      POSTGRES_PASSWORD: password  # Update with your password
+      POSTGRES_DB: dbname  # Update with your db name
+
+  redis:
+    container_name: redis_container
+    image: redis:latest
+
+volumes:
+  postgres_data:

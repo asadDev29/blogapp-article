@@ -1,0 +1,18 @@
+{% include "base/base.html" %}
+
+    {% block title  %}
+    <title>Edit Article</title>
+    {% endblock title  %}
+{% block content  %}
+<div class="container">
+
+<h1>Edit Article</h1>
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}  <!-- This will show title, content as editable and status as read-only -->
+    <button class="btn btn-primary" type="submit">Save Changes</button>
+</form>
+
+<a href="{% url 'dashboard' %}">Back to Dashboard</a>
+</div>
+{% endblock content  %}

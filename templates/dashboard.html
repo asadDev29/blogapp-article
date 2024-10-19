@@ -1,0 +1,31 @@
+{% include "base/base.html" %}
+
+    {% block title  %}
+    <title>Dashboard</title>
+    {% endblock title  %}
+{% block content  %}
+<div class="container">
+
+<h1>Dashboard</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Writer</th>
+            <th>Total Articles Written</th>
+            <th>Articles in Last 30 Days</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for writer in writers %}
+        <tr>
+            <td>{{ writer.user.username }}</td>
+            <td>{{ writer.total_articles }}</td>
+            <td>{{ writer.last_30_articles }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<a href="{% url 'create_article' %}">Create New Article</a>
+</div>
+{% endblock content  %}

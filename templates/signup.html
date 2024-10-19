@@ -1,0 +1,16 @@
+{% include "base/header.html" %}
+
+    {% block title  %}
+    <title>Singup</title>
+    {% endblock title  %}
+{% block content  %}
+<div class="container">
+<h2>Sign Up</h2>
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button class="btn btn-primary" type="submit">Sign Up</button>
+</form>
+Login to your accont  <a href="{% url 'login' %}">Login</a>
+</div>
+{% endblock content  %}

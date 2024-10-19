@@ -1,0 +1,16 @@
+{% include "base/base.html" %}
+
+    {% block title  %}
+    <title>Edited Article</title>
+    {% endblock title  %}
+{% block content  %}
+<div class="container">
+
+<h1>Articles Edited</h1>
+<ul>
+    {% for article in articles %}
+    <li>{{ article.title }} ({{ article.status }})</li>
+    {% endfor %}
+</ul>
+</div>
+{% endblock content  %}
